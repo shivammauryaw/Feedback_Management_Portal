@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Feedbacks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">All Feedbacks</h2>
+
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Course ID</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="f : ${feedbackList}">
+                    <td th:text="${f.id}">1</td>
+                    <td th:text="${f.courseId}">101</td>
+                    <td th:text="${f.rating}">5</td>
+                    <td th:text="${f.comment}">Excellent!</td>
+                    <td>
+                        <a th:href="@{'/feedback/' + ${f.id}}" class="btn btn-sm btn-info">View</a>
+                        <a th:href="@{'/showFormUpdate/' + ${f.id}}" class="btn btn-sm btn-warning">Edit</a>
+                        <a th:href="@{'/deleteStudent/' + ${f.id}}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		
+		<!-- Add this button near the top of your index.html -->
+		<a th:href="@{/feedback/courses}" class="btn btn-primary">View All Courses</a>
+	
+        <div class="text-center mt-4">
+            <a href="/addFeedback" class="btn btn-success">Add New Feedback</a>
+        </div>
+    </div>
+</body>
+
+</html>

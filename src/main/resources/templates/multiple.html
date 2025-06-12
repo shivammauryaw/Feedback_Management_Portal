@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course Feedbacks</title>
+</head>
+<body>
+    <h1>Course Feedbacks</h1>
+    <div th:if="${feedback != null}">
+        <p>ID: <span th:text="${feedback.id}"></span></p>
+        <p>Course ID: <span th:text="${feedback.courseId}"></span></p>
+        <p>Rating: <span th:text="${feedback.rating}"></span></p>
+        <p>Comment: <span th:text="${feedback.comment}"></span></p>
+    </div>
+    <div th:if="${feedback == null}">
+        <p>No feedback found for this course.</p>
+    </div>
+    <a href="/">Back to List</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Feedback Details</title>
+</head>
+<body>
+    <h1>Feedback Details</h1>
+    <p>ID: <span th:text="${feedback.id}"></span></p>
+    <p>Course ID: <span th:text="${feedback.courseId}"></span></p>
+    <p>Rating: <span th:text="${feedback.rating}"></span></p>
+    <p>Comment: <span th:text="${feedback.comment}"></span></p>
+    <a href="/">Back to List</a>
+</body>
+</html>
